@@ -1,0 +1,39 @@
+Kas tas ir?:
+Tas ir mans mazais bankas sistēmas modelis.
+Tas sastāv no vairākiem failiem:
+
+    types.h - Kontu un Transakciju struktūru deklarēšana.
+
+    bank.c - Kontu un bankas sistēmas funkciju definēšana.
+             Lielāka daļa no funkcijām šajā failā strādā izmantojot
+             'find_account()' funkciju kas atgriež specifiskā konta norādi uz tā
+             adresi atmiņā. Dereferencējot šo iegūto konta adresi var piekļūt pie
+             šī konta struktūras mainīgajiem, piemēram, kā 'balance' vai 'account_number'.
+
+    main.c - Galvenais fails kur notiek ievadīto komandu apstrāde.
+             Sākumā tiek deklarētas funkcijas kas ir definētas 'bank.c'
+             failā, lai tās varētu izmantot galvenajā funkcijā.
+             Galvenā funkcija sākas ar kontu ielādi no 'data/accounts.dat'
+             izmantojot funkciju 'load_accounts()', kas ir definēta 'storage.c' failā.
+             Tad tiek definēts simbolu masīvs (String lielākajā daļā
+             no citām programmēšanas valodām), kas ir buferis priekš ievades komandām.
+             Tālāk ir while cikls kurā apstrādā ievadi salīdzinot pirmos 
+             'n-daudzuma'(atkarīgs no darbības) simbolus ar iepriekš definētu
+             konstantu tekstu. Ja viss sakrīt tad 'strncmp()' atgriež 0 un ļauj
+             tālāk notikt darbībām, kas ir saistītas ar to doto komandu.
+             Kad while cikls beidzas, tad tiek 'save_accounts()' funkcija palaista.
+
+    storage.c - Kontu masīvu un to daudzuma saglabāšanas uz un lasīšanas no bināra faila
+                funkciju definēšana.
+
+    logger.h - darbību reģistrēšanas un to saglabāšanas funkcijas deklarēšana.
+    
+    logger.c - darbību reģistrēšanas un to saglabāšanas funkcijas definēšana.
+
+Ko es vel varētu pievienot:
+    1. Konta izveidē ir prasīts 'pin', bet tas nekur nav izmantots,
+       to varētu izmantot, lai veiktu darbības ar specifisku kontu arī ir
+       jāievada ne tikai tā konta numurs 'account_number', bet arī 'pin'
+    2. Vienlaicīgums izmantojot <pthread.h>, kur izveidotu jaunu "thread" priekš
+       katra lietotāja, lai simulētu vairākus cilvēkus izmantojot šo sistēmu,
+       bet to, kā to darīt man vel ir jāapgūst.
