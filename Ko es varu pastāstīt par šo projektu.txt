@@ -6,7 +6,7 @@ Tas sastāv no vairākiem failiem:
 
     bank.c - Kontu un bankas sistēmas funkciju definēšana.
              Lielāka daļa no funkcijām šajā failā strādā izmantojot
-             'find_account()' funkciju kas atgriež specifiskā konta norādi uz tā
+             'find_account()' funkciju kas atgriež specifiska konta norādi uz tā
              adresi atmiņā. Dereferencējot šo iegūto konta adresi var piekļūt pie
              šī konta struktūras mainīgajiem, piemēram, kā 'balance' vai 'account_number'.
 
@@ -32,8 +32,8 @@ Tas sastāv no vairākiem failiem:
 
 Ko es vel varētu pievienot:
     1. Konta izveidē ir prasīts 'pin', bet tas nekur nav izmantots,
-       to varētu izmantot, lai veiktu darbības ar specifisku kontu arī ir
-       jāievada ne tikai tā konta numurs 'account_number', bet arī 'pin'
+       to varētu izmantot, lai veiktu darbības ar specifisku kontu, tad vajadzētu
+       ievadīt ne tikai tā konta numuru 'account_number', bet arī 'pin'.
     2. Vienlaicīgums izmantojot <pthread.h>, kur izveidotu jaunu "thread" priekš
-       katra lietotāja, lai simulētu vairākus cilvēkus izmantojot šo sistēmu,
+       katra lietotāja, lai simulētu vairākus cilvēkus izmantojot šo sistēmu.
        bet to, kā to darīt man vel ir jāapgūst.
