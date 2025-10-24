@@ -1,4 +1,4 @@
 1. Open cmd
 2. Using the 'cd' command access the 'src' folder
-3. Type: 'gcc main.c bank.c storage.c logger.c -o bank.exe'
+3. If using gcc type: 'gcc main.c bank.c storage.c logger.c -o bank.exe'
 4. Either open 'bank.exe' or write './bank' while still in the 'src' directory
